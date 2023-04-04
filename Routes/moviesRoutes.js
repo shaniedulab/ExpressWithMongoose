@@ -5,6 +5,9 @@ const router=express.Router();
 
 // router.param('id',moviesControllers.checkId)
 
+router.route('/movie-stats').get(moviesControllers.getmovieStats)
+router.route('/movie-genre/:genre').get(moviesControllers.getMovieByGenre)
+
 router.route('/')
     .get(moviesControllers.getAllMovies)
     .post(moviesControllers.createMovie)
